@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send text to Application</title>
+    <script>
+	function openCustomProtocol(textToCopy) {
+		navigator.clipboard.writeText(textToCopy).then(() => {
+			document.getElementById("frame-communication").src = "myApp://clipboard"
+		})	
+	}
+    </script>
+</head>
+<body>
+    Click to a button to send some text to an application
+    <button onclick="openCustomProtocol('Text 1')">Text 1</button>
+    <button onclick="openCustomProtocol('Text 2')">Text 2</button>
+    <button onclick="openCustomProtocol('Text 3')">Text 3</button>
+
+    <iframe id="frame-communication" width="0" height="0"/>
+
+
+</body>
+</html>
